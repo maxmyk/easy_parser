@@ -3,13 +3,16 @@ Easy parser
 parse_finder.json
 """
 
-
+# importing necessary modules
 import os
 import sys
 import json
 
 
 def get_labels_from_data(data):
+    """
+    Function that prints available keys
+    """
     ans = "\n"
     for i, elem in enumerate(data):
         if i != len(data)-1:
@@ -23,13 +26,15 @@ def get_labels_from_data(data):
 def parse_data(filename: str):
     """
     Function that parses json file
-    and finds class code
     """
     data = json.load(open(filename))
     return data
 
 
 def process_data(data, idx):
+    """
+    Function that processes data
+    """
     found = False
     new_idx = idx
     if isinstance(data, dict):
